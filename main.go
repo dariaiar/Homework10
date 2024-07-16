@@ -11,10 +11,10 @@ func main() {
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("ToDo list")
 	})
-	mux.HandleFunc("GET / list", checkAuth(getToDoList))
-	mux.HandleFunc("POST/ task", checkAuth(postTask))
-	mux.HandleFunc("PUT/ task", checkAuth(editTask))
-	mux.HandleFunc("DELETE/ task", checkAuth(deleteTask))
+	mux.HandleFunc("GET /list", checkAuth(getToDoList))
+	mux.HandleFunc("POST /task", checkAuth(postTask))
+	mux.HandleFunc("PUT /task", checkAuth(editTask))
+	mux.HandleFunc("DELETE /task", checkAuth(deleteTask))
 	err := http.ListenAndServe(":8080", mux)
 	if err != nil {
 		fmt.Println("Error happened", err.Error())
